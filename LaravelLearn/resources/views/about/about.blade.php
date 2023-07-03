@@ -7,8 +7,7 @@
             </div>
         @else
             <div>
-
-                <h2 style="background-color:Tomato;">{{ $blog['title'] }}: No item</h2>
+                <h2 class="text-warning">{{ $blog['title'] }}: No item</h2>
             </div>
         @endif
     @endforeach
