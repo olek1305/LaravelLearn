@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ExampleBlogs;
+use App\Http\Controllers\loginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,4 +20,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/about', 'App\Http\Controllers\ExampleBlogs@about')->name("about.about");
+Route::get('/about', [ExampleBlogs::class, 'about']);
+
+Route::resource('blog', BlogController::class);
+
+Route::get('/login', [loginController::class, 'index'])->name('login');
