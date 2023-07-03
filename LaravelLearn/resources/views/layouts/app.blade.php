@@ -12,12 +12,7 @@
 
 <body>
     @yield('content')
-    <footer class="bg-light text-center" style="position: fixed; width: 100%; bottom: 0;">
-        <!--copyright-->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">2022 Copyright:
-            <a class="text-dark" href="#">Arcylisz</a>
-        </div>
-    </footer>
+    @include('layouts.footer')
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
         integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous">
     </script>
