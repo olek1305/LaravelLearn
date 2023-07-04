@@ -25,3 +25,5 @@ Route::get('/about', [ExampleBlogs::class, 'about']);
 Route::resource('blog', BlogController::class);
 
 Route::get('/login', [loginController::class, 'index'])->name('login');
+
+Route::post('/login', [loginController::class, 'handleLogin'])->name('login.submit');
