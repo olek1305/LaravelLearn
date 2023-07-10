@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\LoginRequest;
 use Illuminate\Http\Request;
 
 class loginController extends Controller
@@ -11,8 +12,16 @@ class loginController extends Controller
         return view('auth.login');
     }
 
-    public function handleLogin(Request $request)
+    public function handleLogin(LoginRequest $request)
     {
-        dd($request->all());
+        // $request->validate(
+        //     [
+        //         'name.required' => 'The name is required',
+        //         'name.alpha' => 'Name with numbers is not allowed',
+        //         'email.email' => 'Email must be an email'
+        //     ]
+        // );
+
+        return $request;
     }
 }
