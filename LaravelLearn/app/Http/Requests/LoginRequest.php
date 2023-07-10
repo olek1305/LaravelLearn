@@ -21,11 +21,19 @@ class LoginRequest extends FormRequest
      */
     public function rules(): array
     {
-        return
-            [
-                'name' => ['required', 'alpha', 'min:6', 'max:18'],
-                'email' => ['required', 'email'],
-                'password' => 'required'
-            ];
+
+        return [
+            'name' => ['required', 'alpha', 'min:6', 'max:18'],
+            'email' => ['required', 'email'],
+            'password' => 'required'
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'name.required' => 'The name is required',
+            'name.alpha' => 'Name with numbers is not allowed',
+            'email.email' => 'Email must be an email'
+        ];
     }
 }
