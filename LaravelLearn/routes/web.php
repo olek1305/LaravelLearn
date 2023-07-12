@@ -3,6 +3,7 @@
 use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ExampleBlogs;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\loginController;
 
 /*
@@ -27,3 +28,5 @@ Route::resource('blog', BlogController::class);
 Route::get('/login', [loginController::class, 'index'])->name('login');
 
 Route::post('/login', [loginController::class, 'handleLogin'])->name('login.submit');
+
+Route::get('/home', HomeController::class)->name('home');
