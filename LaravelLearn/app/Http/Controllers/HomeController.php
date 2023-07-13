@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post;
+use App\Models\Posts;
 use Illuminate\Http\Request;
 
 
@@ -39,6 +39,41 @@ class HomeController extends Controller
 
         // dd('success');
 
-        
+        // $post = Post::where('id', 5)->first();
+        // $post->title = 'New Title V555';
+        // $post->description = 'this is a new description';
+        // $post->save();
+
+        // dd('success');
+
+
+        // $post = Posts::create([
+        //     'title' => 'this is from mass assign',
+        //     'description' => 'this is a description from mass assign',
+        //     'status' => 1,
+        //     'publish_date' => date('Y-m-d'),
+        //     'user_id' => 5
+        // ]);
+
+        // dd('success');
+
+        // $post = Posts::find(5)->update([
+        //     'title' => 'this is from mass assign',
+        //     'description' => 'this is a description from mass assign',
+        //     'status' => 1,
+        //     'publish_date' => date('Y-m-d'),
+        //     'user_id' => 5
+        // ]);
+
+
+        //with softdelete
+        // Posts::where('id', 1)->delete();
+
+
+        //restore softdelete
+        // return Posts::withTrashed()->find(2)->restore();
+
+        Posts::withTrashed()->find(2)->forceDelete();
+        return Posts::all();
     }
 }
