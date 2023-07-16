@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Address;
 use App\Models\Posts;
+use App\Models\Tag;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 
@@ -73,7 +76,21 @@ class HomeController extends Controller
         //restore softdelete
         // return Posts::withTrashed()->find(2)->restore();
 
-        Posts::withTrashed()->find(2)->forceDelete();
-        return Posts::all();
+        //force to delete
+        // Posts::withTrashed()->find(2)->forceDelete();
+        // return Posts::all();
+
+        // data download from User.php
+        // $users = User::all();
+        // return view('home')->with('users', $users);
+
+        // $addresses = Address::all();
+        // return view('home')->with('addresses', $addresses);
+
+        $post = Posts::first();
+
+        $tag = Tag::first();
+
+        $post->tags()->attach($tag);
     }
 }

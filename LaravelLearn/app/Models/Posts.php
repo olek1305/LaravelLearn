@@ -16,5 +16,11 @@ class Posts extends Model
         'status',
         'publish_date',
         'user_id',
+        'view'
     ];
+
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
+    }
 }

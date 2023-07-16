@@ -1,14 +1,18 @@
 @extends('layouts.app')
 @section('content')
-    @foreach ($posts as $post)
-        @if ($post['status'] == 1)
-            <div>
-                <h2>{{ $post['title'] }}</h2>
-            </div>
-        @else
-            <div>
-                <h2 class="text-warning">{{ $post['title'] }}: No item</h2>
-            </div>
-        @endif
-    @endforeach
+    <main role="main" class="container">
+        <div class="row mt-5">
+            @foreach ($addresses as $address)
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4>{{ $address->user->name }} </h4>
+                            <p>{{ $address->user->email }}</p>
+                            <p>{{ $address->address }}</p>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </main>
 @endsection
