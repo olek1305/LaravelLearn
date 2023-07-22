@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers\Api\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RegisterRequest;
@@ -13,11 +13,6 @@ class RegisterController extends Controller
      */
     public function __invoke(RegisterRequest $request)
     {
-        $user = User::create($request->getData());
-
-        return response()->json([
-            'user' => $user,
-            'token' => $user->createToken('laravel_api_token')->plainTextToken
-        ]);
+        User::create($request->getData());
     }
 }
