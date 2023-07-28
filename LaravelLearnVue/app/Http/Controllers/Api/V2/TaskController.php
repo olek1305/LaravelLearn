@@ -10,6 +10,10 @@ use App\Http\Resources\TaskResource;
 
 class TaskController extends Controller
 {
+    public function __construct()
+    {
+        $this->authorizeResource(Task::class);
+    }
     /**
      * Display a listing of the resource.
      */
@@ -33,7 +37,6 @@ class TaskController extends Controller
      */
     public function show(Task $task)
     {
-        $this->authorize('view', $task);
         return TaskResource::make($task);
     }
 
