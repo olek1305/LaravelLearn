@@ -19,7 +19,8 @@
                     </div>
 
                     <!-- show toggle button -->
-                    <Tasks :tasks="completedTasks" :show="completedTasksVisible && showCompletedTasks" />
+                    <Tasks :tasks="completedTasks" :show="completedTasksVisible && showCompletedTasks"
+                        @updated="handleUpdatedTask" @completed="handleCompletedTask" />
                 </div>
             </div>
         </div>
