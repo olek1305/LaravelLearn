@@ -1,7 +1,9 @@
 <template>
     <li class="list-group-item py-3">
         <div class="d-flex justify-content-start align-items-center">
-            <input class="form-check-input mt-0" type="checkbox" :class="completedClass" :checked="task.is_completed"
+            <input class="form-check-input mt-0" type="checkbox" 
+                :class="completedClass" 
+                :checked="task.is_completed"
                 @change="markTaskAsCompleted" />
             <div class="ms-2 flex-grow-1" :class="completedClass" title="Double click the text to edit or remove"
                 @dblclick="$event => isEdit = true">
