@@ -16,6 +16,11 @@ class TaskPolicy
         return true;
     }
 
+    public function create(User $user): bool
+    {
+        return true;
+    }
+
     /**
      * Determine whether the user can view the model.
      */
